@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.website-layout {
+  max-width: 1300px;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.website-layout .profile-site .profile-site-content {
+  background: #202029;
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  height: 83vh;
+  left: 10px;
+  top: 85px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.website-layout .website-content-site {
+  margin-left: auto;
+  width: 80%;
+  padding: 20px;
 }
+
+.body-bg-img {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: -10000;
+}
+
+.bg-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: -9999;
+  background: #0b0b0ecc;
+}
+/*# sourceMappingURL=App.css.map */

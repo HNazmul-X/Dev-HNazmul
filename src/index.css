@@ -1,15 +1,20 @@
-@font-face {
-  font-family: google-sans;
-  src: url("Fonts/ProductSans-Regular.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 
 body {
   margin: 0;
-  font-family: google-sans, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Quicksand', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 500; 
+ 
+  
+}
+p, button, span, div, a{
+  font-weight:700 !important;
+  color:white;
 }
 
 code {

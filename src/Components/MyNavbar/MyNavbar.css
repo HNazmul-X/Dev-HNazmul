@@ -3,12 +3,17 @@ nav.navbar {
   width: 100%;
   top: 0px;
   left: 0px;
-  -webkit-box-shadow: 0px 20px 40px -15px rgba(0, 0, 0, 0.24);
-          box-shadow: 0px 20px 40px -15px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0px 20px 40px -15px rgba(0, 0, 0, 0.562);
+          box-shadow: 0px 20px 40px -15px rgba(0, 0, 0, 0.562);
+  background: #202029 !important;
 }
 
 nav.navbar #navbarNav .navbar-nav .nav-item .nav-link {
   padding: 10px 25px;
-  color: dimgray;
+  color: #929292;
+}
+
+.navbar-spacer {
+  padding: 30px;
 }
 /*# sourceMappingURL=MyNavbar.css.map */

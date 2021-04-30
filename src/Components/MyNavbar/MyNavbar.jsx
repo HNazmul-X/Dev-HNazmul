@@ -38,8 +38,9 @@ const MyNavbar = () => {
                         </ul>
                     </div>
                 </div>
-    
             </nav>
+
+            <div className="navbar-spacer"></div>
         </div>
     );
 };
