@@ -5,12 +5,11 @@ import "bootstrap/dist/js/bootstrap.bundle"
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import bgImg from "./Images/maxwell-nelson-v6TksP-5d9w-unsplash.jpg"
+import ExtraNeeded from './Components/ExtraNeeded/ExtraNeeded';
 
 ReactDOM.render(
     <React.StrictMode>
-        <img src={bgImg} className="body-bg-img" alt="" />
-        <div className="bg-overlay"></div>
+        <ExtraNeeded/>
         <App />
     </React.StrictMode>,
     document.getElementById("root"),

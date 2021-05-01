@@ -24,6 +24,28 @@ import styled from "styled-components";
     }
  `
 
+ const TitleDesc = styled.h2`
+ 
+   position:relative;
+   display:inline-block;
+   &:hover{
+      &::after{
+         right:-20px;
+      }
+   }
+   &::after{
+      position:absolute;
+      transition:0.3s;
+      content:"";
+      width:100%;
+      height:10px;
+      bottom:-10px;
+      right:0px;
+      background:goldenrod;
+   }
+ 
+ `
 
 
-export {ThemeButton, ThemeA, ThemeP}
+
+export {ThemeButton, ThemeA, ThemeP,ThemeSpan, TitleDesc}

@@ -35,6 +35,7 @@
     left:0px;
     top:0px;
     z-index: -10000;
+    opacity: 0.5;
 }
 .bg-overlay{
     position: fixed;
@@ -45,3 +46,18 @@
     z-index: -9999;
     background:#0b0b0ecc
 }
+
+/* mouse cursor css */
+// .mouse-cursor{
+//     width:50px;
+//     height:50px;
+//     border-radius: 50%;
+//     background:goldenrod;
+//     position: absolute;
+//     z-index: 100000;
+//     transform: translate(-50%, -50%);
+//     pointer-events: none;
+// }
+
+
+
