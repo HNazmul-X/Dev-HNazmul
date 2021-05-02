@@ -1,7 +1,7 @@
 import React from 'react';
 import MyNavbar from '../../Components/MyNavbar/MyNavbar';
 import MyRouter from '../../Router/MyRouter/MyRouter';
-import ProfileSitebar from '../ProfileSitebar/ProfileSitebar';
+import ProfileSitebar from '../../Components/ProfileSitebar/ProfileSitebar';
 
 const LandingPages = () => {
     return (

@@ -31,6 +31,7 @@ import styled from "styled-components";
    &:hover{
       &::after{
          right:-20px;
+         background:#7777c2;
       }
    }
    &::after{
@@ -42,6 +43,7 @@ import styled from "styled-components";
       bottom:-10px;
       right:0px;
       background:goldenrod;
+      border-radius:20px;
    }
  
  `

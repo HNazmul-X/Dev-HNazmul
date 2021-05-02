@@ -1,11 +1,11 @@
 import { faExpand } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
+import { bounce, slideInUp } from "react-animations";
 
 
 const ProjectLargeCardDiv = styled.div`
-cursor:pointer;
 
 .project-card-img{
     width:100%;
@@ -60,27 +60,46 @@ cursor:pointer;
             border-radius:50%;
             cursor: pointer;
             transition:0.5s;
+            &:hover{
+                color:goldenrod;
+            }
         }
 }
 
 `;
 
-const ProjectLargeCard = () => {
+
+const bounceAnimation = keyframes`${slideInUp}`;
+
+const BouncyDiv = styled.div`
+    animation: 1s ${bounceAnimation};
+`;
+
+const ProjectLargeCard = ({ isModalOpen, setIsOpenModal, project, selectCurrentModalData }) => {
+    const { name, bannerImg, id } = project;
+    const selectedProject = (id) => {
+        setIsOpenModal(true)
+        selectCurrentModalData(id)
+
+    }
+
     return (
-        <ProjectLargeCardDiv>
-            <div className="project-card-img">
-                <img src="https://elanta.app/nazar/arter-demo/img/works/thumbnail/1.jpg" alt="" />
+        <BouncyDiv>
+            <ProjectLargeCardDiv>
+                <div className="project-card-img">
+                    <img src={bannerImg} alt="" />
 
-                <div className="project-desc">
-                    <div className="project-desc-content">
-                        <h4>Creative Agency of the project</h4>
-                        <p className="small fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, mollitia!</p>
+                    <div className="project-desc">
+                        <div className="project-desc-content">
+                            <h4>{name}</h4>
+                            <p className="small fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, mollitia!</p>
+                        </div>
                     </div>
-                </div>
 
-                <FontAwesomeIcon className="expand-icon" icon={faExpand}/>
-            </div>
-        </ProjectLargeCardDiv>
+                    <FontAwesomeIcon onClick={() => selectedProject(id)} className="expand-icon" icon={faExpand} />
+                </div>
+            </ProjectLargeCardDiv>
+        </BouncyDiv>
     );
 };
 

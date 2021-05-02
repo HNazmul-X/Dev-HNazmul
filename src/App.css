@@ -45,4 +45,26 @@
 }
 
 /* mouse cursor css */
+/* blog page css */
+#blog-page .header-banner-components, #contact-me .header-banner-components {
+  position: relative;
+  z-index: 1;
+}
+
+#blog-page .header-banner-components::after, #contact-me .header-banner-components::after {
+  content: "";
+  background: #ffcb3e;
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+#blog-page .header-banner-components .profile-img, #contact-me .header-banner-components .profile-img {
+  z-index: 2;
+  -webkit-filter: drop-shadow(2px 2px 5px #1d1f25);
+          filter: drop-shadow(2px 2px 5px #1d1f25);
+}
 /*# sourceMappingURL=App.css.map */

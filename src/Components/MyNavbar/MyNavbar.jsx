@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeSpan } from '../Theme/ThemeStyledComponent';
+import { ThemeButton, ThemeSpan } from '../Theme/ThemeStyledComponent';
+import myResume from "../../Images/Hnazmul Hassan full Stack Web development Resume_2.pdf"
 import "./MyNavbar.css"
 
 const MyNavbar = () => {
@@ -27,14 +28,22 @@ const MyNavbar = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">
-                                    Pricing
+                                <Link className="nav-link" to="/blog">
+                                    Blog
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link disabled" to="/" tabindex="-1" aria-disabled="true">
-                                    Disabled
+                                <Link className="nav-link " to="/about-me" >
+                                    About Me
                                 </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link " to="/contact-me" >
+                                    Contact Me
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <a href={myResume} download className="btn"> <ThemeButton className="btn"> Download Resume </ThemeButton> </a>
                             </li>
                         </ul>
                     </div>

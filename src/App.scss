@@ -61,3 +61,27 @@
 
 
 
+/* blog page css */
+#blog-page,#contact-me{
+    .header-banner-components{
+        position:relative;
+        z-index: 1;
+        &::after{
+            content: "";
+            background:rgb(255, 203, 62);
+            width:20%;
+            height:100%;
+            position: absolute;
+            right:0px;
+            top:0px;
+            z-index: -1;
+
+        }
+        .profile-img{
+            z-index: 2;
+            filter: drop-shadow(2px 2px 5px rgb(29, 31, 37));
+            
+        }
+        
+    }
+}
