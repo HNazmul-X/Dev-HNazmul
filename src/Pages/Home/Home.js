@@ -6,6 +6,7 @@ import Projects from './Projects';
 import myResume from "../../Images/Hnazmul Hassan full Stack Web development Resume_2.pdf" 
 import computerBg from "../../Images/maxwell-nelson-v6TksP-5d9w-unsplash.jpg"
 import mySmileImg from "../../Images/HNazmul-smile.png"
+import Footer from '../../Components/Footer/Footer';
 
 const Home = () => {
     return (
@@ -35,6 +36,7 @@ const Home = () => {
             />
             <MyServices />
             <Projects />
+            <Footer/>
         </>
     );
 };

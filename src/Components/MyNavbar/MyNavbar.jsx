@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeButton, ThemeSpan } from '../Theme/ThemeStyledComponent';
 import myResume from "../../Images/Hnazmul Hassan full Stack Web development Resume_2.pdf"
 import "./MyNavbar.css"
 
 const MyNavbar = () => {
+    
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,7 +17,7 @@ const MyNavbar = () => {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <div className="collapse navbar-collapse text-center " id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/">

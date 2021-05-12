@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { ThemeA } from '../Theme/ThemeStyledComponent';
 
@@ -11,6 +11,7 @@ const ProjectCardDiv = styled.div`
     border-radius:10px;
     border:2px solid #19181d;
     transition:0.3s;
+    height:100%;
     &:hover{
         border:2px solid goldenrod;
     }
@@ -29,17 +30,18 @@ const ProjectCardDiv = styled.div`
     }
 `;
 
-const ProjectCard = () => {
+const ProjectCard = ({project}) => {
+    const history = useHistory()
 
 
-    const desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ab eligendi, facilis delectus neque obcaecati odit! Quas sapiente doloribus voluptatem cupiditate obcaecati tempora, dicta tempore? Sequi porro natus harum ex";
+const desc = project.descriptions[0];
     return (
-        <ProjectCardDiv>
+        <ProjectCardDiv  onClick={()=> history.push("/project/"+project.id)} >
             <div className="cardimg-wrapper mb-2">
-                <img src="https://hnazmul.github.io/assignment-1-personal-website/images/image%208-min%20(1).webp" alt="" className="img-fluid" />
+                <img src={project.bannerImg} alt="" className="img-fluid" />
             </div>
             <div className="card-img-desc">
-                <h4>Creative Agency</h4>
+                <h4>{project.name}</h4>
                 <p className=" fw-normal small">{desc.substring(0, 100)}... <Link><ThemeA>Show More</ThemeA></Link> </p>
             </div>
         </ProjectCardDiv>

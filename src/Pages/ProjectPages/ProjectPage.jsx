@@ -1,4 +1,9 @@
-import React, { useState } from 'react';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFolderOpen, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ThemeSpan,TitleDesc } from '../../Components/Theme/ThemeStyledComponent';
 import PojectDetailsShower from './PojectDetailsShower';
@@ -35,15 +40,28 @@ const ModalContent = styled.div`
 const ProjectPage = () => {
     const [isOpenModal, setIsOpenModal] = useState(false)
     const [currentModalData,setCurrentModalData] = useState({})
+    const {projectId} = useParams()
+    const location = useLocation()
+    console.log(projectId)
+    console.log(location)
 
-    const selectCurrentModalData = (id) => {
+    useEffect(()=> {
 
-        const newModaldata = projectsData.filter((project) => project.id === id);
+        const newModaldata = projectsData.filter((project) => project.id === projectId);
         setCurrentModalData(
             newModaldata[0]
         )
-        console.log(currentModalData)
-    }
+        if(projectId){
+            setIsOpenModal(true)
+        }
+        else if(location.pathname === "/projects"){
+            setIsOpenModal(false)
+        }
+
+
+    },[currentModalData, location.pathname, projectId])
+
+    
 
 
     return (
@@ -53,7 +71,7 @@ const ProjectPage = () => {
                     {projectsData.map((item) => {
                         return (
                             <div className="col-md-6 py-2">
-                                <ProjectLargeCard selectCurrentModalData={selectCurrentModalData} project={item} isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
+                                <ProjectLargeCard project={item} isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
                             </div>
                         );
                     })}
@@ -80,14 +98,32 @@ const ProjectPage = () => {
                             })}
                         </div>
 
-
                         <div className="feature">
-                            <h2><TitleDesc>Implemented Feature</TitleDesc></h2>
+                            <h2>
+                                <TitleDesc>Implemented Feature</TitleDesc>
+                            </h2>
                             <div className="all-freatured">
                                 <ul className="feature-ul">
-                                    {currentModalData?.feature?.map(featureText => <li className="feature-li font-montserrat">{featureText}</li>)}
+                                    {currentModalData?.feature?.map((featureText) => (
+                                        <li className="feature-li font-montserrat">{featureText}</li>
+                                    ))}
                                 </ul>
                             </div>
+                        </div>
+
+                        <div className="screenShots-gellery">
+                            <div className="p-3">
+                                <TitleDesc className="mx-auto">SreenShots</TitleDesc>
+                            </div>
+                        </div>
+
+                        <div className="links py-2 text-center">
+                            <a target="_blank" rel="noreferrer"  href={currentModalData?.sourceCode} className="">
+                                <FontAwesomeIcon className=" bg-secondary rounded rounded-circle p-2 fa-3x mx-2" icon={faGithub} />
+                            </a>
+                            <a target="_blank" rel="noreferrer"  href={currentModalData?.livesite} className="">
+                                <FontAwesomeIcon className=" bg-secondary rounded rounded-circle p-2 fa-3x mx-2" icon={faGlobe} />
+                            </a>
                         </div>
                     </div>
                 </ModalContent>

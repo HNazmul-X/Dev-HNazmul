@@ -2,6 +2,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { slideInUp } from "react-animations";
+import { useHistory } from "react-router";
 import styled, { keyframes } from "styled-components";
 
 const slideUpAnimation = keyframes`${slideInUp}`;
@@ -54,6 +55,7 @@ const ProjectDetailsShowerDiv = styled.div`
 
 
 const PojectDetailsShower = ({ isShow, setIsModalShow,children,headline }) => {
+     const history = useHistory()
     return (
         <>
             {isShow && (
@@ -62,7 +64,7 @@ const PojectDetailsShower = ({ isShow, setIsModalShow,children,headline }) => {
                         <div className="container wrapper">
                             <div className="nav">
                                 <h4 className="p-2 text-center w-100">{headline?headline:""}</h4>
-                                <FontAwesomeIcon onClick={() => setIsModalShow(false)} className="times-icon" icon={faTimes} />
+                                <FontAwesomeIcon onClick={() => history.push("/projects")} className="times-icon" icon={faTimes} />
                             </div>
 
                             <div className="pt-5 content">

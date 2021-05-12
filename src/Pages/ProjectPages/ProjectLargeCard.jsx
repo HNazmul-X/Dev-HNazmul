@@ -2,7 +2,8 @@ import { faExpand } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled,{keyframes} from 'styled-components';
-import { bounce, slideInUp } from "react-animations";
+import { bounce, headShake, slideInUp } from "react-animations";
+import { useHistory } from 'react-router';
 
 
 const ProjectLargeCardDiv = styled.div`
@@ -76,10 +77,11 @@ const BouncyDiv = styled.div`
 `;
 
 const ProjectLargeCard = ({ isModalOpen, setIsOpenModal, project, selectCurrentModalData }) => {
+    const history = useHistory()
     const { name, bannerImg, id } = project;
     const selectedProject = (id) => {
-        setIsOpenModal(true)
-        selectCurrentModalData(id)
+        
+        history.push("/project/"+id)
 
     }
 

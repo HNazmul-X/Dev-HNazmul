@@ -27,7 +27,8 @@ cursor: pointer;
 
 `
 
-const ServiceBox = () => {
+const ServiceBox = ({project}) => {
+    console.log(project)
     return (
         <div className="col-md-4 p-3">
             <ServicesBoxDiv>
