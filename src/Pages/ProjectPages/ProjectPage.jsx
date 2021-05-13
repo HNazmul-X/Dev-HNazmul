@@ -61,7 +61,7 @@ const ProjectPage = () => {
 
     },[currentModalData, location.pathname, projectId])
 
-    
+    console.log("current modal data",currentModalData)
 
 
     return (
@@ -84,33 +84,33 @@ const ProjectPage = () => {
                         <img src={currentModalData?.bannerImg} alt="" className="img-fluid banner-img" />
                     </div>
 
-                    <div className="desc pt-5">
-                        <div className="about">
-                            <h2 className="pb-3">
-                                <TitleDesc>About My Project</TitleDesc>
-                            </h2>
-                            {currentModalData?.descriptions?.map((desc) => {
-                                return (
-                                    <div className="py-1">
-                                        <p className="blog-text">{desc}</p>
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        <div className="feature">
-                            <h2>
-                                <TitleDesc>Implemented Feature</TitleDesc>
-                            </h2>
-                            <div className="all-freatured">
-                                <ul className="feature-ul">
-                                    {currentModalData?.feature?.map((featureText) => (
-                                        <li className="feature-li font-montserrat">{featureText}</li>
-                                    ))}
-                                </ul>
+                    {currentModalData.section.map((project) => {
+                        return (
+                            <div className="specific-section mb-5">
+                                <div className="title mb-2">
+                                    <TitleDesc>{project.title}</TitleDesc>
+                                </div>
+                                <div className="description">
+                                    {project.title.includes("Feature") ? (
+                                        <ul className="">
+                                            {project?.description.map((desc) => (
+                                                <li>{desc}</li>
+                                            ))}
+                                        </ul>
+                                    ) : project.title.includes("Tools") ? (
+                                        <ul className="">
+                                            {project?.description.map((desc) => (
+                                                <li>{desc}</li>
+                                            ))}
+                                        </ul>
+                                    ) : (
+                                        project.description.map((desc) => <p className="mb-0">{desc}</p>)
+                                    )}
+                                </div>
                             </div>
-                        </div>
-
+                        );
+                    })}
+                    <div className="desc pt-5">
                         <div className="screenShots-gellery">
                             <div className="p-3">
                                 <TitleDesc className="mx-auto">SreenShots</TitleDesc>
@@ -118,10 +118,10 @@ const ProjectPage = () => {
                         </div>
 
                         <div className="links py-2 text-center">
-                            <a target="_blank" rel="noreferrer"  href={currentModalData?.sourceCode} className="">
+                            <a target="_blank" rel="noreferrer" href={`https://${currentModalData?.livesite}`} className="">
                                 <FontAwesomeIcon className=" bg-secondary rounded rounded-circle p-2 fa-3x mx-2" icon={faGithub} />
                             </a>
-                            <a target="_blank" rel="noreferrer"  href={currentModalData?.livesite} className="">
+                            <a target="_blank" rel="noreferrer" href={`https://${currentModalData?.livesite}`} className="">
                                 <FontAwesomeIcon className=" bg-secondary rounded rounded-circle p-2 fa-3x mx-2" icon={faGlobe} />
                             </a>
                         </div>

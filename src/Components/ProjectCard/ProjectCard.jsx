@@ -31,18 +31,23 @@ const ProjectCardDiv = styled.div`
 `;
 
 const ProjectCard = ({project}) => {
-    const history = useHistory()
+    const history = useHistory();
+    console.log(project);
 
-
-const desc = project.descriptions[0];
+    const desc = project.section[0].description[0]
     return (
-        <ProjectCardDiv  onClick={()=> history.push("/project/"+project.id)} >
+        <ProjectCardDiv onClick={() => history.push("/project/" + project.id)}>
             <div className="cardimg-wrapper mb-2">
-                <img src={project.bannerImg} alt="" className="img-fluid" />
+                <img src={project?.bannerImg} alt="" className="img-fluid" />
             </div>
             <div className="card-img-desc">
-                <h4>{project.name}</h4>
-                <p className=" fw-normal small">{desc.substring(0, 100)}... <Link><ThemeA>Show More</ThemeA></Link> </p>
+                <h4>{project?.name}</h4>
+                <p className=" fw-normal small">
+                    {desc?.substring(0, 100)}...{" "}
+                    <Link>
+                        <ThemeA>Show More</ThemeA>
+                    </Link>{" "}
+                </p>
             </div>
         </ProjectCardDiv>
     );
