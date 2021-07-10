@@ -13,7 +13,7 @@ const ProjectDetailsShowerDiv = styled.div`
     width: 100%;
     height: 100vh;
     top: 0px;
-    background: rgba(0, 0, 0, 0.897);
+    background:rgba(0, 0, 0, 0.596);
     z-index: 10000;
     left: 0px;
     overflow-y: auto;
@@ -48,6 +48,13 @@ const ProjectDetailsShowerDiv = styled.div`
             &:active {
                 background: red;
             }
+        }
+    }
+    .content {
+        background: rgba(24, 24, 24, 0.767);
+        padding:20px;
+        p,h1,h2, li{
+            color:#b1b1b1;
         }
     }
 `;

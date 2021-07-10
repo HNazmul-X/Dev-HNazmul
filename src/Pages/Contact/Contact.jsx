@@ -30,7 +30,7 @@ const Contact = () => {
             />
 
             <div className="contact-me-form container-fluid">
-                <div className="title p-5 text-center">
+                <div className="title p-5 pb-2 text-center">
                     <TitleDesc>Stay In Touch</TitleDesc>
                     <p>Contact Me for your Project, any help or any Idea About your project</p>
                 </div>

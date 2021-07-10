@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import ScreenShotViewer from '../../Components/ScreenShotViewer/ScreenShotViewer';
 import { ThemeSpan,TitleDesc } from '../../Components/Theme/ThemeStyledComponent';
 import PojectDetailsShower from './PojectDetailsShower';
 import ProjectLargeCard from './ProjectLargeCard';
@@ -84,27 +85,27 @@ const ProjectPage = () => {
                         <img src={currentModalData?.bannerImg} alt="" className="img-fluid banner-img" />
                     </div>
 
-                    {currentModalData.section.map((project) => {
+                    {currentModalData?.section?.map((project) => {
                         return (
                             <div className="specific-section mb-5">
                                 <div className="title mb-2">
                                     <TitleDesc>{project.title}</TitleDesc>
                                 </div>
                                 <div className="description">
-                                    {project.title.includes("Feature") ? (
+                                    {project?.title?.includes("Feature") ? (
                                         <ul className="">
-                                            {project?.description.map((desc) => (
+                                            {project?.description?.map((desc) => (
                                                 <li>{desc}</li>
                                             ))}
                                         </ul>
-                                    ) : project.title.includes("Tools") ? (
+                                    ) : project?.title.includes("Tools") ? (
                                         <ul className="">
-                                            {project?.description.map((desc) => (
+                                            {project?.description?.map((desc) => (
                                                 <li>{desc}</li>
                                             ))}
                                         </ul>
                                     ) : (
-                                        project.description.map((desc) => <p className="mb-0">{desc}</p>)
+                                        project?.description?.map((desc) => <p className="mb-0">{desc}</p>)
                                     )}
                                 </div>
                             </div>
@@ -113,7 +114,8 @@ const ProjectPage = () => {
                     <div className="desc pt-5">
                         <div className="screenShots-gellery">
                             <div className="p-3">
-                                <TitleDesc className="mx-auto">SreenShots</TitleDesc>
+                                <TitleDesc className="mx-auto mb-5">SreenShots</TitleDesc>
+                                <ScreenShotViewer images={currentModalData?.screenshots}></ScreenShotViewer>
                             </div>
                         </div>
 

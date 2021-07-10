@@ -25,7 +25,7 @@ const Home = () => {
                         <p className="small fw-normal">Lorem ipsum dolor, Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dignissimos, itaque alias facere laboriosam blanditiis aliquam! Nam laudantium sapiente sequi. sit amet consectetur adipisicing elit. Voluptas, reiciendis.</p>
 
                         <ThemeButton className="btn">
-                            <a href={myResume} download>
+                            <a href={myResume} className="text-decoration-none" download>
                                 Download My Resume
                             </a>
                         </ThemeButton>

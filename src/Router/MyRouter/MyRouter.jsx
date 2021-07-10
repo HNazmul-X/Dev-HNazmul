@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import About from '../../Pages/About/About';
 import Blog from '../../Pages/Blog/Blog';
 import Contact from '../../Pages/Contact/Contact';
@@ -22,10 +22,10 @@ const MyRouter = () => {
                 <Route exact path="/blog">
                     <Blog/>
                 </Route>
-                <Route exact path="/about-me">
+                <Route exact path="/about">
                     <About/>
                 </Route>
-                <Route exact path="/contact-me">
+                <Route exact path="/contact">
                     <Contact/>
                 </Route>
             </Switch>
