@@ -7,7 +7,7 @@ import { ThemeButton } from "../../Components/Theme/ThemeStyledComponent";
 import envlopeImg from "../../Images/Envelope_perspective_matte.png";
 
 const ContactMeForm = () => {
-    const [isEmailSent, setIsEmailSent] = useState("noting");
+    const [isEmailSent, setIsEmailSent] = useState("nothing");
     const [isEmailSpinner, setISEmailSpinner] = useState(false);
     const {
         register,
@@ -32,12 +32,12 @@ const ContactMeForm = () => {
             .then((res) => res.json())
             .then((data) => {
                 setISEmailSpinner(true);
-                setIsEmailSent(data?.accepted.length > 0? "success" : "failed");
+                setIsEmailSent(data?.accepted.length > 0 ? "success" : "failed");
                 console.log(data);
 
-                setTimeout(()=> {
-                    setISEmailSpinner(false)
-                }, 5000)
+                setTimeout(() => {
+                    setISEmailSpinner(false);
+                }, 5000);
             });
     };
 
@@ -84,7 +84,7 @@ const ContactMeForm = () => {
             </div>
 
             {isEmailSpinner && (
-                <div className="col-md-10 p-2 alert-primary ms-auto mb-5">
+                <div className="col-md-10 p-2 mt-4 alert-primary ms-auto mb-5">
                     <div className="row align-items-center">
                         {isEmailSent === "noting" ? (
                             <>
