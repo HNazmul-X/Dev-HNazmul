@@ -3,14 +3,9 @@ import { ThemeSpan, TitleDesc } from '../../Components/Theme/ThemeStyledComponen
 import HomeBannerSection from '../Home/HomeBannerSection';
 import blogBg from "../../Images/joanna-kosinska-LbMy35NyCNg-unsplash.jpg";
 import mySmileImg from "../../Images/undraw_personal_email_t7nw.svg";
-import styled from 'styled-components';
 import ContactMeForm from './ContactMeForm';
 
 
-const contactPageDiv = styled.main`
-
-
-`
 
 
 const Contact = () => {
