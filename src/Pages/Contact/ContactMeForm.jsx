@@ -1,5 +1,5 @@
 import { faCheckCircle, faTimesCircle, faUser } from "@fortawesome/free-regular-svg-icons";
-import { faEnvelopeOpen, faPaperPlane, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelopeOpen, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";

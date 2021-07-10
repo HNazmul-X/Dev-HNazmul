@@ -214,6 +214,8 @@
     display: block;
     background: #111111;
     width: 80%;
+    height: 100%;
+    padding-top: 20px;
   }
   .hnazmul-navbar .hnazmul-navbar-container .hnazmul-navbar-content .hnazmul-navbar-content-wrapper ul.navbar-list li.navbar-list-item {
     text-align: center;

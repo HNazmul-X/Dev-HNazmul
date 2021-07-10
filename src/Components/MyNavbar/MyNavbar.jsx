@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ThemeButton, ThemeSpan } from "../Theme/ThemeStyledComponent";
 import myResume from "../../Images/Hnazmul Hassan full Stack Web development Resume_2.pdf";
 import togglerIcon from "../../Images/toggler-icon.svg";
@@ -39,7 +39,7 @@ const MyNavbar = () => {
                         </h4>
                     </div>
                     <div className="hnazmul-nav-toggle-btn">
-                        <button>
+                        <button className="bg-transparent">
                             <img className="toggler-btn" src={togglerIcon} alt="" />
                         </button>
                     </div>
