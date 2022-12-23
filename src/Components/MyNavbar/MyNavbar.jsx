@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ThemeButton, ThemeSpan } from "../Theme/ThemeStyledComponent";
 import myResume from "../../Images/Hnazmul Hassan full Stack Web development Resume_2.pdf";
@@ -7,27 +7,28 @@ import canclerIcon from "../../Images/times-navbar-clouser-icon.svg";
 import "./MyNavbar.css";
 
 const MyNavbar = () => {
-    useEffect(() => {
-        const NavbarContent = document.querySelector(".hnazmul-navbar .hnazmul-navbar-container .hnazmul-navbar-content");
-        const navbarToggleIcon = document.querySelector(".hnazmul-navbar .hnazmul-navbar-container .hnazmul-nav-toggle-btn");
-        const navbarCloserIcon = document.querySelector(".hnazmul-navbar .hnazmul-navbar-container .hnazmul-navbar-content .hnazmul-navbar-content-wrapper button.navbar-closer-icon");
+    const [isNavbarShow, setIsNavbarShow] = useState(false);
 
-        navbarToggleIcon?.addEventListener("click", (e) => {
-            NavbarContent.classList.toggle("navbar-show");
-            e.stopPropagation();
-        });
-        navbarCloserIcon?.addEventListener("click", (e) => {
-            NavbarContent.classList.toggle("navbar-show");
-            e.stopPropagation()
-        });
+    // useEffect(() => {
+    //     const NavbarContent = document.querySelector(".hnazmul-navbar .hnazmul-navbar-container .hnazmul-navbar-content");
+    //     const navbarToggleIcon = document.querySelector(".hnazmul-navbar .hnazmul-navbar-container .hnazmul-nav-toggle-btn");
+    //     const navbarCloserIcon = document.querySelector(".hnazmul-navbar .hnazmul-navbar-container .hnazmul-navbar-content .hnazmul-navbar-content-wrapper button.navbar-closer-icon");
 
-        window.onclick = () => {    
-            if(NavbarContent.classList.contains("navbar-show")){
-                NavbarContent.classList.remove("navbar-show")
-            }
+    //     navbarToggleIcon?.addEventListener("click", (e) => {
+    //         NavbarContent.classList.toggle("navbar-show");
+    //         e.stopPropagation();
+    //     });
+    //     navbarCloserIcon?.addEventListener("click", (e) => {
+    //         NavbarContent.classList.toggle("navbar-show");
+    //         e.stopPropagation()
+    //     });
 
-        }
-    });
+    //     window.onclick = () => {
+    //         if(NavbarContent.classList.contains("navbar-show")){
+    //             NavbarContent.classList.remove("navbar-show")
+    //         }
+    //     }
+    // });
 
     return (
         <div>
@@ -38,15 +39,15 @@ const MyNavbar = () => {
                             <ThemeSpan>H. Nazmul</ThemeSpan>
                         </h4>
                     </div>
-                    <div className="hnazmul-nav-toggle-btn">
+                    <div className="hnazmul-nav-toggle-btn" onClick={() => setIsNavbarShow(true)}>
                         <button className="bg-transparent">
                             <img className="toggler-btn" src={togglerIcon} alt="" />
                         </button>
                     </div>
 
-                    <div className="hnazmul-navbar-content">
+                    <div className={`hnazmul-navbar-content ${isNavbarShow ? "navbar-show" : "e"}`}>
                         <div className="hnazmul-navbar-content-wrapper">
-                            <ul className="navbar-list">
+                            <ul className="navbar-list" onClick={() => setIsNavbarShow(false)}>
                                 <li className="navbar-list-item">
                                     <NavLink exact to="/" activeClassName="nav-item-active" className="navbar-list-link font-montserrat">
                                         Home
@@ -79,7 +80,7 @@ const MyNavbar = () => {
                                     </a>
                                 </li>
                             </ul>
-                            <button className="navbar-closer-icon">
+                            <button className="navbar-closer-icon" onClick={() => setIsNavbarShow(false)}>
                                 <img className="navbar-closer" src={canclerIcon} alt="" />
                             </button>
                         </div>

@@ -1,8 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+    /* cursor: none !important; */
+}
+
+/* button{
+  cursor: none !important;
+} */
+p,
+button,
+span,
+div,
+a {
+    font-weight: 400;
+    color: white;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.font-montserrat {
+    font-family: "montserrat", "sans-serif";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "montserrat", "sans-serif";
+}
+
 .website-layout {
     max-width: 1300px;
     box-sizing: border-box !important;
     display: flex;
     margin: auto;
+
     .profile-site {
         .profile-site-content {
             background: #202029;
@@ -12,9 +62,11 @@
             height: 83vh;
             left: 10px;
             top: 85px;
+
             .intro-and-img {
                 position: relative;
                 z-index: 2;
+
                 .sitebar-toggle-icon {
                     display: none;
                 }
@@ -27,18 +79,22 @@
                 top: 0px;
                 transform: translateX(-105%);
                 transition: 0.5s;
+
                 &:hover {
                     transform: translateX(0px);
                     transition: 1s;
                 }
+
                 .intro-and-img {
                     position: relative;
+
                     .icon {
                         padding: 10px;
                         background: #0b0b0ecc;
                         position: absolute;
                         right: -35px;
                         top: 100px;
+
                         .sitebar-toggle-icon {
                             display: initial;
                             font-size: 20px;
@@ -49,23 +105,31 @@
                     }
                 }
             }
+
             @media screen and (max-width: 1000px) {
                 width: 40%;
             }
+
             @media screen and (max-width: 720px) {
                 width: 50%;
             }
+
+            @media screen and (max-width: 500) {
+                width: 80%;
+            }
         }
     }
+
     .website-content-site {
         margin-left: auto;
         width: 80%;
         padding: 20px;
+
         @media screen and (max-width: 1200px) {
             width: 100%;
         }
-        .website-layout-content {
-        }
+
+        .website-layout-content {}
     }
 }
 
@@ -78,6 +142,7 @@
     z-index: -10000;
     opacity: 0.5;
 }
+
 .bg-overlay {
     position: fixed;
     width: 100%;
@@ -106,6 +171,7 @@
     .header-banner-components {
         position: relative;
         z-index: 1;
+
         &::after {
             content: "";
             background: rgb(255, 203, 62);
@@ -116,33 +182,38 @@
             top: 0px;
             z-index: -1;
         }
+
         .profile-img {
             z-index: 2;
             filter: drop-shadow(2px 2px 5px rgb(29, 31, 37));
         }
     }
 }
+
 #social-icon-group-site-bar-profile {
     display: flex;
     justify-content: space-around;
-    
+
 
     @for $i from 1 through 4 {
         .icon:nth-child(#{$i}) {
             padding: 5px 7px;
-            margin:0px 7px;
+            margin: 0px 7px;
             border-radius: 50%;
             margin-top: 5px;
             display: inline-block;
             background: rgb(35, 38, 43);
             border: 1px solid rgb(37, 41, 46);
             box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.308);
+
             &:hover {
                 border: 1px dotted gold;
+
                 svg {
                     color: gold;
                 }
             }
+
             svg {
                 font-size: 20px;
                 color: #acacaccc;
@@ -150,6 +221,7 @@
         }
     }
 }
-.contact-form-image-MBWjUqZTundupbfx2aXarXuw5Ko5aMd{
+
+.contact-form-image-MBWjUqZTundupbfx2aXarXuw5Ko5aMd {
     transform: scale(1.5);
 }
